@@ -27,3 +27,19 @@ exports.viewEmployee = async (req, res) => {
     
 };
 
+exports.detailsEmployee = async (req, res) => {
+    try{
+        const { employeeID } = req.body  
+        Employee.findById(employeeID)
+        // Employee.find()
+        .then(response => {
+            res.json({
+                response
+            })
+        })
+    }catch(error){
+        res.status(400).json({ message: error.message });
+    }
+    
+};
+
