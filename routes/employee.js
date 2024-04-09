@@ -5,5 +5,6 @@ const employeeController = require('../controllers/EmployeeController');
 router.post('/register', employeeController.registerEmployee);
 router.get('/view', employeeController.viewEmployee);
 router.post('/details', employeeController.detailsEmployee);
+router.post('/update', employeeController.updateEmployee);
 
 module.exports = router;

@@ -43,3 +43,22 @@ exports.detailsEmployee = async (req, res) => {
     
 };
 
+exports.updateEmployee = async (req, res) => {
+    try{
+        const { employeeID, name, designation, email, phone, age } = req.body  
+        const updateData = {
+            name: name, designation: designation, email: email, phone:phone, age:age
+        }
+        Employee.findByIdAndUpdate(employeeID, {$set: updateData})
+        // Employee.find()
+        .then(response => {
+            res.json({
+                response
+            })
+        })
+    }catch(error){
+        res.status(400).json({ message: error.message });
+    }
+    
+};
+
