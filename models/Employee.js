@@ -10,6 +10,9 @@ const employeeSchema = new Schema({
     email:{
         type: String
     },
+    phone:{
+        type: String
+    },
     age:{
         type: Number
     },
