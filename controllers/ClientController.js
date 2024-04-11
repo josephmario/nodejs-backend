@@ -14,7 +14,7 @@ exports.registerClient = async (req, res) => {
 
 exports.viewClient = async (req, res) => {
     try{
-        Employee.find()
+        Client.find()
         .then(response => {
             res.json({
                 response

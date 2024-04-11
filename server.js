@@ -35,3 +35,6 @@ app.use('/api/client', clientRoutes);
 
 const projectRoutes = require('./routes/project');
 app.use('/api/project', projectRoutes);
+
+const timeSheetRoutes = require('./routes/timesheet');
+app.use('/api/timesheet', timeSheetRoutes);
