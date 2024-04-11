@@ -7,6 +7,9 @@ const TimeSheetSchema = new Schema({
     project_id:{
         type: String
     },
+    activity_id:{
+        type: String
+    },
     date:{
         type: Date, default: Date.now
     },
