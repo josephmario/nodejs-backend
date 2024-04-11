@@ -32,3 +32,6 @@ app.use('/api/employees', employeeRoutes);
 
 const clientRoutes = require('./routes/client');
 app.use('/api/client', clientRoutes);
+
+const projectRoutes = require('./routes/project');
+app.use('/api/project', projectRoutes);

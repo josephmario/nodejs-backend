@@ -1,20 +1,20 @@
-const Client = require('../models/Client')
+const Project = require('../models/Project')
 
-exports.registerClient = async (req, res) => {
+exports.registerProject = async (req, res) => {
     try {
-        const { client_name, description } = req.body;
-        const client = new Client({ client_name, description });
-        await client.save();
-        res.status(201).json(client);
+        const { project_name, description } = req.body;
+        const project = new Project({ project_name, description });
+        await project.save();
+        res.status(201).json(project);
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
 };
 
 
-exports.viewClient = async (req, res) => {
+exports.viewProject = async (req, res) => {
     try{
-        Employee.find()
+        Project.find()
         .then(response => {
             res.json({
                 response
@@ -26,11 +26,10 @@ exports.viewClient = async (req, res) => {
     
 };
 
-exports.detailsClient = async (req, res) => {
+exports.detailsProject = async (req, res) => {
     try{
-        const { clientID } = req.body  
-        Client.findById(clientID)
-        // Employee.find()
+        const { projectID } = req.body  
+        Project.findById(projectID)
         .then(response => {
             res.json({
                 response
@@ -42,13 +41,14 @@ exports.detailsClient = async (req, res) => {
     
 };
 
-exports.updateClient = async (req, res) => {
+exports.updateProject = async (req, res) => {
     try{
-        const { clientID, client_name, description } = req.body  
+        const { projectID, project_name, description } = req.body  
         const updateData = {
-            client_name: client_name, description: description
+            project_name: project_name, description: description
         }
-        Client.findByIdAndUpdate(clientID, {$set: updateData})
+        Project.findByIdAndUpdate(projectID, {$set: updateData})
+        // Employee.find()
         .then(response => {
             res.json({
                 response
