@@ -26,15 +26,3 @@ exports.login = async (req, res) => {
         res.status(400).send(error);
     }
 }
-
-// const { employeeID, name, designation, email, phone, age } = req.body  
-//         const updateData = {
-//             name: name, designation: designation, email: email, phone:phone, age:age
-//         }
-//         Employee.findByIdAndUpdate(employeeID, {$set: updateData})
-//         // Employee.find()
-//         .then(response => {
-//             res.json({
-//                 response
-//             })
-//         })

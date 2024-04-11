@@ -29,3 +29,6 @@ app.use('/api/auth', authRoutes);
 
 const employeeRoutes = require('./routes/employee');
 app.use('/api/employees', employeeRoutes);
+
+const clientRoutes = require('./routes/client');
+app.use('/api/client', clientRoutes);
